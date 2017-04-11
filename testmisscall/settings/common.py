@@ -141,7 +141,7 @@ DATABASES = {
 
 # Use the database configuration defined in environment variable DATABASE_URL
 db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
+DATABASES['default'].update(db_from_env)
 
 # Get configuration of email from environment variables
 EMAIL_URL = os.environ.get('EMAIL_URL')
