@@ -18,3 +18,7 @@ class SaveCall(APIView):
     def post(self, request):
         Call.objects.create(data=json.dumps(request.data))
         return HttpResponse("OK", status=200)
+
+    def get(self, request):
+        Call.objects.create(data=json.dumps(request.GET))
+        return HttpResponse("OK", status=200)
