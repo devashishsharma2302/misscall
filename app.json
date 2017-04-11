@@ -2,6 +2,9 @@
   "name": "testmisscall",
   "description": "",
   "keywords": ["python", "django"],
+  "scripts": {
+    "postdeploy": "python manage.py migrate"
+  },
   "env": {
     "DJANGO_SETTINGS_MODULE": "testmisscall.settings.local"
   }
