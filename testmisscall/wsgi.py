@@ -1,5 +1,5 @@
 """
-WSGI config for misscall project.
+WSGI config for testmisscall project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

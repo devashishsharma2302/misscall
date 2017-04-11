@@ -1,4 +1,4 @@
-"""misscall URL Configuration
+"""testmisscall URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -20,7 +20,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from rest_framework.routers import DefaultRouter
-from rest_framework_swagger.views import get_swagger_view
 
 from .authentication.views import UserViewSet
 from .authentication import urls as authentication_urls
@@ -28,16 +27,15 @@ from .authentication import urls as authentication_urls
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
 
-schema_view = get_swagger_view(title='misscall APIs')
-
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^swagger/$', schema_view),
     url(r'^api/v1/', include(authentication_urls)),
     url(r'^api/v1/', include(router.urls)),
 
     url(r'^healthcheck/$', views.health_check),
+    url(r'^save-call/$', views.SaveCall.as_view()),
+
 ]
 

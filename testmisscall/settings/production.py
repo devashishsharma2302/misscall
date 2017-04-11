@@ -17,6 +17,6 @@ if os.environ.get("LOGENTRIES_KEY", ''):
                 'formatter': 'verbose'
             }
 
-    LOGGING['loggers']['misscall']['handlers'] = ['console', 'file', 'logentries']
+    LOGGING['loggers']['testmisscall']['handlers'] = ['console', 'file', 'logentries']
 
 
